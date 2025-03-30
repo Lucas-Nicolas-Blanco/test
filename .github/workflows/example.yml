@@ -13,4 +13,4 @@ jobs:
       - run: echo "${{github.repository}} was clonned to runner"
       - name: List files in directory
         run: ls ${{github.workspace}}
-      - run: The job status is ${{job.status}}
+      - run: echo "The job status is ${{job.status}}"
