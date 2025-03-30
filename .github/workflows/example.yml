@@ -7,10 +7,10 @@ jobs:
   Testing-Pipeline:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This is running in ${{runner.os}}
+      - run: echo "This is running in ${{runner.os}}"
       - name: "Checkout repository"
         uses: actions/checkout@v4
-      - run: ${{github.repository}} was clonned to runner
+      - run: echo "${{github.repository}} was clonned to runner"
       - name: List files in directory
         run: ls ${{github.workspace}}
       - run: The job status is ${{job.status}}
