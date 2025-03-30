@@ -4,11 +4,19 @@ run-name: ${{github.actor}} is Running pipeline
 on: [push]
 
 jobs:
-  Testing-Pipeline:
+  setup:
     runs-on: ubuntu-latest
-    environment: development
     steps:
-      - name: Retrieve secret
-        env:
-          secret_name: ${{secrets.SECRET_NAME}}
-        run: echo "This is the secret_name $secret_name"
+      - run: echo "This is the setup job"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - run: "This is the build job"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: "This is the test job"
