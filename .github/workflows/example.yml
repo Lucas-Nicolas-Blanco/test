@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: setup
     steps:
-      - run: "This is the build job"
+      - run: echo "This is the build job"
 
   test:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - run: "This is the test job"
+      - run: echo "This is the test job"
