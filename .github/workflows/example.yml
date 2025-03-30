@@ -6,11 +6,9 @@ on: [push]
 jobs:
   Testing-Pipeline:
     runs-on: ubuntu-latest
+    environment: development
     steps:
-      - run: echo "This is running in ${{runner.os}}"
-      - name: "Checkout repository"
-        uses: actions/checkout@v4
-      - run: echo "${{github.repository}} was clonned to runner"
-      - name: List files in directory
-        run: ls ${{github.workspace}}
-      - run: echo "The job status is ${{job.status}}"
+      - name: Retrieve secret
+        env:
+          secret_name: ${{secrets.SECRET_NAME}}
+        run: echo "This is the secret_name $secret_name
