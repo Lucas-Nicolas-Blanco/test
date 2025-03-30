@@ -11,4 +11,4 @@ jobs:
       - name: Retrieve secret
         env:
           secret_name: ${{secrets.SECRET_NAME}}
-        run: echo "This is the secret_name $secret_name
+        run: echo "This is the secret_name $secret_name"
